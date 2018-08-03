@@ -110,7 +110,7 @@ RCT_EXPORT_METHOD(presentNewEventDialog:(NSDictionary *)options resolver:(RCTPro
         event.notes = [RCTConvert NSString:options[_notes]];
     }
     if (options[_timeZone]) {
-        event.timeZone = [NSTimeZone timeZoneWithName: [RCTConvert NSString:details[_timeZone]]];
+        event.timeZone = [NSTimeZone timeZoneWithName: [RCTConvert NSString:options[_timeZone]]];
     }
 
     addController.event = event;
