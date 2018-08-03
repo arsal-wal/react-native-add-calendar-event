@@ -66,7 +66,7 @@ public class AddCalendarEventModule extends ReactContextBaseJavaModule implement
             }
             
             if (config.hasKey("timeZone")) {
-                calendarIntent.putExtra("eventTimezone", getTimestamp(config.getString("timeZone")));
+                calendarIntent.putExtra("eventTimezone", config.getString("timeZone"));
             }
 
             if (config.hasKey("location")
