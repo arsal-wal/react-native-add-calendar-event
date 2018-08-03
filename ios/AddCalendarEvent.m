@@ -26,6 +26,7 @@ RCT_EXPORT_MODULE()
 static NSString *const _id = @"id";
 static NSString *const _title = @"title";
 static NSString *const _location = @"location";
+static NSString *const _timeZone = @"timeZone";
 static NSString *const _startDate = @"startDate";
 static NSString *const _endDate = @"endDate";
 static NSString *const _notes = @"notes";
@@ -107,6 +108,9 @@ RCT_EXPORT_METHOD(presentNewEventDialog:(NSDictionary *)options resolver:(RCTPro
     }
     if (options[_notes]) {
         event.notes = [RCTConvert NSString:options[_notes]];
+    }
+    if (options[_timeZone]) {
+        event.timeZone = [NSTimeZone timeZoneWithName: [RCTConvert NSString:details[_timeZone]]];
     }
 
     addController.event = event;
